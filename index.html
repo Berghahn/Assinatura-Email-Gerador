@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinatura Email</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+<style>
+        html{font-family: Optima, sans-serif;}
+        body{
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #084177, #687466, #cd8d7b, #fbc490);
+            animation: colors 15s ease infinite;
+            background-size: 300% 300%;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        form{
+            background-color: rgba(255, 255, 255, 0.733);
+            width: 320px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        p{
+            margin: 5px;
+            align-content:space-between;
+            width: 100%;
+            justify-content: right;
+            align-items: flex-end;
+        }
+        input{
+          width: 100%;
+        }
+        @keyframes colors {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+                <form action="assinatura.php" method="POST">
+                  <input type="hidden" name="ass" value="1"/>
+                    <p> Nome Completo <input type="text" name="name"placeholder="" required></p>
+                    <p> Cargo <input type="text" name="depto"placeholder=""required ></p>
+                    <p> Email <input type="email" name="email" placeholder="exemplo@iemercurio.com.br" required></p>
+                    <p> Ramal <input type="text" id ="ramal" name="ramal" placeholder=""></p>
+                    <p> Telefone (opcional) <input type="text" class ="tel" placeholder=""name="tel"/></p>
+                    <p></p>
+                    <p></p>
+                    <center>
+                    <input type="submit" value="GERAR ASSINATURA">
+                    </center>
+                </form>
+                <script>$(".tel").mask("(99) 9 9999-9999");</script>
+                <script>$("#ramal").mask("999");</script>
+
+</body>
+</html>
+    
